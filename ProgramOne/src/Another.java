@@ -8,8 +8,8 @@ public class Another {
 		 Random f= new Random();
 		 
 		 
-		 	int[] a = new int[10];
-	        int [] number = new int [20];
+		 	int[] a = new int[100];
+	        int [] number = new int [200000];
 	        //int [] numberTwo = new int[1];
 	        
 	        
@@ -23,7 +23,7 @@ public class Another {
 	        
 	        
 
-	        System.out.print("Random Numbers:");
+	        System.out.print(" Random Numbers:");
 	        for (int d = 0 ; d<number.length ; d++){
 	            int Randomd = g.nextInt(50000)+1;
 	            number[d] = Randomd;
@@ -65,14 +65,45 @@ public class Another {
 
 	}
 	    public static long SelectionSort(int[] a) {
-	    	long startTime = System.currentTimeMillis();
+	    	long startTimee = System.currentTimeMillis();
 	    //int [] a = new int[100];
-	    int temp=0;
-	    int j;
-	    int minValue=0;
-	    int minIndex=0;
+	    //int temp=0;
+	    //int j;
+	    //int minValue=0;
+	    //int minIndex=0;
 	    
-	        for(int i=0;i<a.length;i++){
+	    for(int i= a.length-1; i>0;i--){
+			int largest = i;
+			for(int j=i-1; j>=0; j--){
+				if(a[j] > a[largest]){
+					largest = j;
+				}
+			}
+			
+			swap(a,i,largest);//swaps the Largest to the back 
+			 
+			
+		}
+	    return (System.currentTimeMillis() - startTimee);
+	}
+		
+		//swapa[i] with a [j]
+		
+		public static void swap (int[] a, int i, int j){
+			if(i!=j){
+				int temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+		
+
+	    
+	    
+	    
+	    
+	    /*    
+	    for(int i=0;i<a.length;i++){
 	            minValue=a[i];
 	            minIndex=i;
 	            for(j=i;j<a.length;j++) {
@@ -86,8 +117,9 @@ public class Another {
 	            	a[i]=a[minIndex];
 	            	a[minIndex]=temp;
 	            }
-	        }
-	        return (System.currentTimeMillis() - startTime); 
+	        }*/
+	    
+	        
 	    }
 
-}
+
