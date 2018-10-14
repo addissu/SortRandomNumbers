@@ -29,8 +29,8 @@ public class Another {
 	            number[d] = Randomd;
 	            System.out.print(" " +Randomd);
 	            }
-	        System.out.print("\nTime:"+(SelectionSort(a)));
-	        System.out.print("\nTime:"+(SelectionSort(number)));
+	        //System.out.print("\nTimeSelection:"+(SelectionSort(a)));
+	       System.out.print("\nTimeSelection:"+(SelectionSort(number)));
 	        
 	        //System.out.print("Random Numbers:");
 	        //for (int d = 0 ; d<numberTwo.length ; d++){
@@ -39,14 +39,15 @@ public class Another {
 	            //System.out.print(" " +RandomG);
 	            //}
 
-	        System.out.print("\nTimer:"+(BubbleSortAsceMethod(number)));
-	        System.out.print("\nTimer:"+(BubbleSortAsceMethod(a)));
+	        //System.out.print("\nTimer:"+(BubbleSortAsceMethod(number)));
+	        //System.out.print("\nTimer:"+(BubbleSortAsceMethod(a)));
 	        
 
 	    }
 	    public static long BubbleSortAsceMethod(int[] number){
 	    	
 	    	long startTime = System.currentTimeMillis();
+	    	
 	        int temp;
 	        
 	        
@@ -66,6 +67,7 @@ public class Another {
 	}
 	    public static long SelectionSort(int[] a) {
 	    	long startTimee = System.currentTimeMillis();
+	    	System.out.println(startTimee);
 	    //int [] a = new int[100];
 	    //int temp=0;
 	    //int j;
@@ -84,6 +86,7 @@ public class Another {
 			 
 			
 		}
+	    System.out.println(startTimee);
 	    return (System.currentTimeMillis() - startTimee);
 	}
 		
