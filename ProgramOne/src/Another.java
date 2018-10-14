@@ -8,9 +8,9 @@ public class Another {
 		 Random f= new Random();
 		 
 		 
-		 	int[] a = new int[100];
-	        int [] number = new int [100];
-	        int [] numberTwo = new int[200000];
+		 	int[] a = new int[10];
+	        int [] number = new int [20];
+	        //int [] numberTwo = new int[1];
 	        
 	        
 	        System.out.print("Selection sort:");
@@ -30,16 +30,17 @@ public class Another {
 	            System.out.print(" " +Randomd);
 	            }
 	        System.out.print("\nTime:"+(SelectionSort(a)));
+	        System.out.print("\nTime:"+(SelectionSort(number)));
 	        
-	        System.out.print("Random Numbers:");
-	        for (int d = 0 ; d<numberTwo.length ; d++){
-	            int RandomG = g.nextInt(50000)+1;
-	            numberTwo[d] = RandomG;
-	            System.out.print(" " +RandomG);
-	            }
+	        //System.out.print("Random Numbers:");
+	        //for (int d = 0 ; d<numberTwo.length ; d++){
+	           // int RandomG = g.nextInt(50000)+1;
+	            //numberTwo[d] = RandomG;
+	            //System.out.print(" " +RandomG);
+	            //}
 
-	        System.out.print("\nTimer:"+(BubbleSortAsceMethod(numberTwo)));
-	        
+	        System.out.print("\nTimer:"+(BubbleSortAsceMethod(number)));
+	        System.out.print("\nTimer:"+(BubbleSortAsceMethod(a)));
 	        
 
 	    }
