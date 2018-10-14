@@ -5,7 +5,7 @@ public class Another {
 
 	public static void main(String[] args) {
 		 Random g = new Random();
-		 
+		 Random f= new Random();
 		 
 		 
 		 	int[] a = new int[100];
@@ -15,7 +15,7 @@ public class Another {
 	        
 	        System.out.print("Selection sort:");
 	        for (int c = 0 ; c<a.length ; c++){
-	            int RandomG = g.nextInt(50000)+1;
+	            int RandomG = f.nextInt(50000)+1;
 	            a[c] = RandomG;
 	            System.out.print(" " +RandomG);
 	            }
@@ -25,11 +25,11 @@ public class Another {
 
 	        System.out.print("Random Numbers:");
 	        for (int d = 0 ; d<number.length ; d++){
-	            int RandomG = g.nextInt(50000)+1;
-	            number[d] = RandomG;
-	            System.out.print(" " +RandomG);
+	            int Randomd = g.nextInt(50000)+1;
+	            number[d] = Randomd;
+	            System.out.print(" " +Randomd);
 	            }
-	        //System.out.print("\nTime:"+(BubbleSortAsceMethod(number)));
+	        System.out.print("\nTime:"+(SelectionSort(a)));
 	        
 	        System.out.print("Random Numbers:");
 	        for (int d = 0 ; d<numberTwo.length ; d++){
@@ -63,21 +63,28 @@ public class Another {
 	        
 
 	}
-	    public long SelectionSort(int[] a) {
+	    public static long SelectionSort(int[] a) {
 	    	long startTime = System.currentTimeMillis();
 	    //int [] a = new int[100];
-	    int temp;
+	    int temp=0;
 	    int j;
-	        for(int i=1;i<a.length;i++){
-	            j = i-1; 
-	            while(i>0 && a[j] > a[i]){
-	                temp = a[i];
-	                a[i] = a[j];
-	                a[j] = temp;
+	    int minValue=0;
+	    int minIndex=0;
+	    
+	        for(int i=0;i<a.length;i++){
+	            minValue=a[i];
+	            minIndex=i;
+	            for(j=i;j<a.length;j++) {
+	            	if(a[j]<minValue) {
+	            		minValue=a[j];
+	            		minIndex=j;
+	            	}
 	            }
-	        }
-	        for(int x=0; x<a.length;x++){
-	            System.out.println(a[x]);   
+	            if(minValue<a[i]) {
+	            	temp=a[i];
+	            	a[i]=a[minIndex];
+	            	a[minIndex]=temp;
+	            }
 	        }
 	        return (System.currentTimeMillis() - startTime); 
 	    }
